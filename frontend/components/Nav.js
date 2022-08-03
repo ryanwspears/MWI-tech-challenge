@@ -10,7 +10,7 @@ const Nav = () => {
   if(router.pathname == '/') {
     return (
       <div className={NavStyles.top}>
-          <Image src={'/Logo.png'} alt={'Logo'} width={350} height={73} />
+          <Link href={'/'}><Image src={'/Logo.png'} alt={'Logo'} width={350} height={73} /></Link>
           <Link href={'/contact'}>contact</Link>
       </div>
     )
@@ -18,7 +18,7 @@ const Nav = () => {
   else if(router.pathname == '/contact') {
     return (
       <div className={NavStyles.top}>
-          <Image src={'/Logo.png'} alt={'Logo'} width={350} height={73} />
+          <Link href={'/'}><Image src={'/Logo.png'} alt={'Logo'} width={350} height={73} /></Link>
           <Link href={'/'}>home</Link>
       </div>
     )

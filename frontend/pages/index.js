@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -12,6 +13,56 @@ export default function Home() {
       </Head>
 
       <div className={styles.main}>
+
+        <div className={styles.cards}>
+
+          <div className={styles.card}>
+            <div style={{'height': '25%', 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center'}}>
+              <Image src={'/Talkie.png'} alt={'Talkie'} width={51} height={106} />
+            </div>
+            <div>
+              <h1>Heading Two</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              </p>
+            </div>
+            <button>Learn More</button>
+          </div>
+
+          <div className={styles.card}>
+            <div style={{'height': '25%', 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center'}}>
+              <Image src={'/Rabbit.png'} alt={'Rabbit'} width={104} height={62} />
+            </div>
+            <div>
+              <h1>Heading Two</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              </p>
+            </div>
+            <button>Learn More</button>
+          </div>
+
+          <div className={styles.card}>
+            <div style={{'height': '25%', 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center'}}>
+              <Image src={'/Shield.png'} alt={'Shield'} width={98} height={98} />
+            </div>
+            <div>
+              <h1>Heading Two</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              </p>
+            </div>
+            <button>Learn More</button>
+          </div>
+
+        </div>
+
+        <div className={styles.textSec}>
+          <h1><span style={{'border-bottom': '4px solid #DEBF79'}}>Heading</span> One</h1>
+          <p style={{'color': '#fff'}}>
+            Remove the duplicates in 2 JavaScript arrays {'\('}found in readme{'\)'}, add the results to an array and output the list of distinct names in an unordered list below this paragraph when <span style={{'color': '#DEBF79', 'cursor': 'pointer'}}>this link</span> is clicked. If the operation has been completed already, notify the user that this has already been done.
+          </p>
+        </div>
 
       </div>
 
