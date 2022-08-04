@@ -5,11 +5,18 @@
     flex-direction: row;
     width: 100%;
     position: fixed;
-    padding-top: 1rem;
-    width: 68%;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1330px;
     z-index: 99;
 }
 
 .top span {
     cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .link {
+        margin-left: 1rem;
+    }
 }

@@ -10,7 +10,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -20,7 +20,72 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     background-color: #fff;
+}
+
+.textSec {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 1rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 1rem;
+}
+
+.contact input {
+    background-color: #F5F5F5;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #858585;
+    padding: 0.8rem;
+    width: 45%;
+}
+
+.contact textarea {
+    background-color: #F5F5F5;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #858585;
+    padding: 0.8rem;
+    width: 94%;
+}
+
+.contact button {
+    background-color: #DEBF79;
+    color: #fff;
+    border: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+    .left {
+        width: 100%;
+    }
+    .right {
+        width: 100%;
+    }
+    .contact input {
+        width: 94%;
+    }
 }
