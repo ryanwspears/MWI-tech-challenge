@@ -30,8 +30,8 @@ const contact = () => {
         <div className={styles.contact}>
           <h1>Heading Two</h1>
           <form>
-            <input type={'text'} name={'firstName'} placeholder={'First Name'} style={{'margin': '0.5rem'}} required />
-            <input type={'text'} name={'lastName'} placeholder={'Last Name'} style={{'margin': '0.5rem'}} required />
+            <input type={'text'} name={'first_name'} placeholder={'First Name'} style={{'margin': '0.5rem'}} required />
+            <input type={'text'} name={'last_name'} placeholder={'Last Name'} style={{'margin': '0.5rem'}} required />
             <input type={'text'} name={'title'} placeholder={'Title'} style={{'margin': '0.5rem'}} required />
             <input type={'email'} name={'email'} placeholder={'Email'} style={{'margin': '0.5rem'}} required />
             <textarea name={'message'} placeholder={'Message'} style={{'resize': 'vertical', 'margin': '0.5rem', 'height': '6rem'}}></textarea>
