@@ -1,8 +1,35 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [showArray, setShowArray] = useState(false);
+  const [showDone, setShowDone] = useState(false);
+  function toggle(){
+    setShowArray(true);
+    if(showArray) {
+      setShowDone(true);
+    }
+  }
+
+  function sortArray() {
+    var resultArray = array1.concat(array2);
+    resultArray = [...new Set([...array1,...array2])];
+    console.log(resultArray);
+    var names = resultArray.map((name) => {
+      return <li key={name}>{name}</li>
+    });
+    if(showArray) {
+      return(
+        <ul style={{display: showArray?"block":"none"}}>{names}</ul>
+      );
+    }
+  }
+
+  const alreadyDone = <p style={{display: showDone?"block":"none"}}>This operation has already been completed</p>;
+
   return (
     <div className={styles.container}>
 
@@ -60,8 +87,10 @@ export default function Home() {
         <div className={styles.textSec}>
           <h1><span style={{'border-bottom': '4px solid #DEBF79'}}>Heading</span> One</h1>
           <p style={{'color': '#fff'}}>
-            Remove the duplicates in 2 JavaScript arrays {'\('}found in readme{'\)'}, add the results to an array and output the list of distinct names in an unordered list below this paragraph when <span style={{'color': '#DEBF79', 'cursor': 'pointer'}}>this link</span> is clicked. If the operation has been completed already, notify the user that this has already been done.
+            Remove the duplicates in 2 JavaScript arrays {'\('}found in readme{'\)'}, add the results to an array and output the list of distinct names in an unordered list below this paragraph when <span onClick={toggle} style={{'color': '#DEBF79', 'cursor': 'pointer'}}>this link</span> is clicked. If the operation has been completed already, notify the user that this has already been done.
           </p>
+          {alreadyDone}
+          {sortArray()}
         </div>
 
       </div>
@@ -69,3 +98,20 @@ export default function Home() {
     </div>
   )
 }
+
+const array1 = [
+  'Matt Johnson',
+  'Matt Johnson',
+  'Bart Paden',
+  'Ryan Doss',
+  'Jared Malcolm'
+];
+
+const array2 = [
+  'Matt Johnson',
+  'Bart Paden',
+  'Bart Paden',
+  'Jordan Heigle',
+  'Jordan Heigle',
+  'Tyler Viles'
+];

@@ -15,11 +15,31 @@ const contact = () => {
       </Head>
 
       <div className={styles.left}>
-        
+        <div className={styles.textSec}>
+          <h1><span style={{'border-bottom': '4px solid #DEBF79'}}>Heading</span> One</h1>
+          <p style={{'color': '#fff', 'fontWeight': '300'}}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+          </p>
+          <p style={{'color': '#fff', 'fontWeight': '300'}}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          </p>
+        </div>
       </div>
-      
-      <div className={styles.right}>
 
+      <div className={styles.right}>
+        <div className={styles.contact}>
+          <h1>Heading Two</h1>
+          <form>
+            <input type={'text'} name={'firstName'} placeholder={'First Name'} style={{'margin': '0.5rem'}} required />
+            <input type={'text'} name={'lastName'} placeholder={'Last Name'} style={{'margin': '0.5rem'}} required />
+            <input type={'text'} name={'title'} placeholder={'Title'} style={{'margin': '0.5rem'}} required />
+            <input type={'email'} name={'email'} placeholder={'Email'} style={{'margin': '0.5rem'}} required />
+            <textarea name={'message'} placeholder={'Message'} style={{'resize': 'vertical', 'margin': '0.5rem', 'height': '6rem'}}></textarea>
+            <div style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', 'width': '100%'}}>
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
 
     </div>
