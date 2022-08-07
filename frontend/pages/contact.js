@@ -1,10 +1,31 @@
 import React from 'react'
 import styles from '../styles/Contact.module.css'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
 
 const contact = () => {
+
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    fetch('http://localhost:5000/posts')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  console.log(data)
+
+  if(loading) {
+    return (
+      <div>loading</div>
+    )
+  }
+
   return (
     <div className={styles.container}>
 
@@ -18,10 +39,10 @@ const contact = () => {
         <div className={styles.textSec}>
           <h1><span style={{'border-bottom': '4px solid #DEBF79'}}>Heading</span> One</h1>
           <p style={{'color': '#fff', 'fontWeight': '300'}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            {data.posts[0].contact_1}
           </p>
           <p style={{'color': '#fff', 'fontWeight': '300'}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+            {data.posts[0].contact_2}
           </p>
         </div>
       </div>
@@ -29,12 +50,12 @@ const contact = () => {
       <div className={styles.right}>
         <div className={styles.contact}>
           <h1>Heading Two</h1>
-          <form>
-            <input type={'text'} name={'first_name'} placeholder={'First Name'} style={{'margin': '0.5rem'}} required />
-            <input type={'text'} name={'last_name'} placeholder={'Last Name'} style={{'margin': '0.5rem'}} required />
-            <input type={'text'} name={'title'} placeholder={'Title'} style={{'margin': '0.5rem'}} required />
-            <input type={'email'} name={'email'} placeholder={'Email'} style={{'margin': '0.5rem'}} required />
-            <textarea name={'message'} placeholder={'Message'} style={{'resize': 'vertical', 'margin': '0.5rem', 'height': '6rem'}}></textarea>
+          <form method='POST' action='http://localhost:5000/posts'>
+            <input type={'text'} name='first_name' placeholder={'First Name'} style={{'margin': '0.5rem'}} required />
+            <input type='text' name='last_name' placeholder={'Last Name'} style={{'margin': '0.5rem'}} required />
+            <input type='text' name='title' placeholder={'Title'} style={{'margin': '0.5rem'}} required />
+            <input type='email' name='email' placeholder={'Email'} style={{'margin': '0.5rem'}} required />
+            <textarea name='message' placeholder={'Message'} style={{'resize': 'vertical', 'margin': '0.5rem', 'height': '6rem'}}></textarea>
             <div style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', 'width': '100%'}}>
               <button>Submit</button>
             </div>
