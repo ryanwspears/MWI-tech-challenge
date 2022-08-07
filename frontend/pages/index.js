@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
 
 export default function Home() {
 
@@ -30,6 +30,27 @@ export default function Home() {
 
   const alreadyDone = <p style={{display: showDone?"block":"none"}}>This operation has already been completed</p>;
 
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    fetch('http://localhost:5000/posts')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  console.log(data)
+
+  if(loading) {
+    return (
+      <div>loading</div>
+    )
+  }
+
+
   return (
     <div className={styles.container}>
 
@@ -50,7 +71,7 @@ export default function Home() {
             <div>
               <h1>Heading Two</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                {data.posts[0].card_1}
               </p>
             </div>
             <button>Learn More</button>
@@ -63,7 +84,7 @@ export default function Home() {
             <div>
               <h1>Heading Two</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                {data.posts[0].card_2}
               </p>
             </div>
             <button>Learn More</button>
@@ -76,7 +97,7 @@ export default function Home() {
             <div>
               <h1>Heading Two</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                {data.posts[0].card_3}
               </p>
             </div>
             <button>Learn More</button>
