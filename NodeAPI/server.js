@@ -9,6 +9,8 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/posts", require("./routes/routes"));
 
 app.use((err, req, res, next) => {
