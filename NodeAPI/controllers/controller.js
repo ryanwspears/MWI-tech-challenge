@@ -13,9 +13,12 @@ exports.getAllPosts = async (req, res, next) => {
 exports.createNewPost = async (req, res, next) => {
   try {
     let { first_name, last_name, title, email, message } = req.body;
+
     let post = new Post(first_name, last_name, title, email, message);
 
-    post = await post.save();
+    await post.save();
+
+    console.log(first_name);
 
     res.status(201).json({ message: "Post created" });
   } catch (error) {
