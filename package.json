@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "frontend": "cd frontend && yarn dev",
-    "api": "cd NodeAPI && npm run dev"
+    "frontend": "cd frontend && yarn install && yarn dev",
+    "api": "cd NodeAPI && npm install && npm run dev"
   },
   "repository": {
     "type": "git",

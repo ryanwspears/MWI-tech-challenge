@@ -49,7 +49,7 @@ const contact = () => {
 
       <div className={styles.right}>
         <div className={styles.contact}>
-          <h1>Heading Two</h1>
+          <h1 style={{'color': '#222222'}}>Heading Two</h1>
           <form method='POST' action='http://localhost:5000/posts'>
             <input type='text' name='first_name' placeholder={'First Name'} style={{'margin': '0.5rem'}} required />
             <input type='text' name='last_name' placeholder={'Last Name'} style={{'margin': '0.5rem'}} required />

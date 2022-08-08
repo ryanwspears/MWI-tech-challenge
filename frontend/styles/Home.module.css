@@ -59,7 +59,11 @@
 }
 
 .card p {
-  font-size: 0.7rem;
+  font-size: 1rem;
+}
+
+.card h1 {
+  color: #222222;
 }
 
 .card button {
