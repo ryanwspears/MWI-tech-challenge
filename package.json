@@ -1,0 +1,21 @@
+{
+  "name": "mwi-tech-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend && yarn dev",
+    "api": "cd NodeAPI && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanwspears/MWI-tech-challenge.git"
+  },
+  "keywords": [],
+  "author": "Ryan Spears",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanwspears/MWI-tech-challenge/issues"
+  },
+  "homepage": "https://github.com/ryanwspears/MWI-tech-challenge#readme"
+}
